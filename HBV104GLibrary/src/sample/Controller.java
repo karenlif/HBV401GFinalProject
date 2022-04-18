@@ -26,12 +26,12 @@ public class Controller implements Initializable {
     private TextField ktTextField;
     @FXML
     private TextField emailTextField;
-    @FXML
-    private ListView tripListView;
+    // @FXML
+    //private ListView tripListView;
 
     private DataFactory dataFactory = new DataFactory();
     private ObservableList<Passenger> passengers = FXCollections.observableArrayList();
-    private ObservableList<Trip> trips = FXCollections.observableArrayList();
+    //private ObservableList<Trip> trips = FXCollections.observableArrayList();
 
 
     public void addButtonOnActivity(ActionEvent event) {
@@ -42,10 +42,10 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         passengers = dataFactory.getPassenger(); //fáum hér inn farþegana
-        trips = dataFactory.getTrip();
+        //trips = dataFactory.getTrip();
 
         userListView.setItems(passengers);
-        tripListView.setItems(trips);
+        //tripListView.setItems(trips);
 
 
     }
