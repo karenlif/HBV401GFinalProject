@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -35,10 +34,11 @@ public class Controller implements Initializable {
     private ObservableList<Trip> trips = FXCollections.observableArrayList();
 
 
-    public void addButtonOnActivity(ActionEvent event){
-        passengers.add(new Passenger(ktTextField.getText(), usernameTextField.getText(),emailTextField.getText()));
+    public void addButtonOnActivity(ActionEvent event) {
+        passengers.add(new Passenger(ktTextField.getText(), usernameTextField.getText(), emailTextField.getText()));
 
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         passengers = dataFactory.getPassenger(); //fáum hér inn farþegana
@@ -58,10 +58,11 @@ public class Controller implements Initializable {
 
         reservationListView.setItems(getReservedTrips(selectedItem));
     }
-    private ObservableList<Trip> getReservedTrips(Passenger passenger){
+
+    private ObservableList<Trip> getReservedTrips(Passenger passenger) {
         ObservableList<Trip> reservedTrips = FXCollections.observableArrayList();
         ArrayList<Reservation> reservations = passenger.getReservations();
-        for(Reservation reservation: reservations){
+        for (Reservation reservation : reservations) {
             reservedTrips.add(reservation.getTrip()); //getTrip?
         }
         return reservedTrips;
